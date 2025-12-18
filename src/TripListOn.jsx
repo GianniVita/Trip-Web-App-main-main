@@ -57,7 +57,7 @@ function TripListOn({ onViewTrip, searchTerm = '', onBackToHome }) {
                     </div>
                     {searchTerm && (
                         <button className="btn btn-outline-secondary btn-sm mt-4 mb-4" onClick={onBackToHome}>
-                            <i className="bi bi-house-door me-1"></i>
+                            <img src="/assets/Favicon_valigia.png" alt="Home" style={{ width: '16px', height: '16px', marginRight: '4px' }} />
                             Torna alla Home
                         </button>
                     )}
