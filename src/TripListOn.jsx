@@ -1,7 +1,7 @@
 import { trips } from './Trips';
 import { currentTrips } from './CurrentTrips';
 
-function TripListOn({ onViewTrip, searchTerm = '' }) {
+function TripListOn({ onViewTrip, searchTerm = '', onBackToHome }) {
 
     // Filtra i viaggi in base al termine di ricerca
     const filterTrips = (tripList) => {
@@ -17,9 +17,12 @@ function TripListOn({ onViewTrip, searchTerm = '' }) {
     return (
         <div className="container mt-4">
             {searchTerm && (
-                <div className="alert alert-info mb-4">
-                    <i className="bi bi-search me-2"></i>
-                    Risultati per: <strong>"{searchTerm}"</strong>
+                <div className="alert alert-info mb-4 d-flex justify-content-between align-items-center">
+                    <div>
+                        <i className="bi bi-search me-2"></i>
+                        Risultati per: <strong>"{searchTerm}"</strong>
+                    </div>
+
                 </div>
             )}
 
@@ -30,30 +33,36 @@ function TripListOn({ onViewTrip, searchTerm = '' }) {
                     {searchTerm ? `Nessun viaggio in corso trovato per "${searchTerm}"` : 'Nessun viaggio in corso'}
                 </p>
             ) : (
-                
+
                 <div className="container mt-5">
-                  
+
                     <div className="row row-cols-1 row-cols-md-4 g-4">
                         {filteredCurrentTrips.map(trip => (
                             <div key={trip.id} className="col">
-                            <div className="card">
-                            <img src={trip.image} className="card-img-top card-img-custom"  alt={trip.destination} />
-                            <div className="card-body">
-                            <h5 className="card-title">{trip.destination}</h5>
-                            <p className="card-text">Dal {trip.startDate} al {trip.endDate}</p>
-                            <button
-                            className="btn btn-primary btn-sm"
-                            onClick={() => onViewTrip(trip)} >
-                            <i className="bi bi-eye me-1"></i>
-                            Dettagli
-                            </button>
+                                <div className="card">
+                                    <img src={trip.image} className="card-img-top card-img-custom" alt={trip.destination} />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{trip.destination}</h5>
+                                        <p className="card-text">Dal {trip.startDate} al {trip.endDate}</p>
+                                        <button
+                                            className="btn btn-primary btn-sm"
+                                            onClick={() => onViewTrip(trip)} >
+                                            <i className="bi bi-eye me-1"></i>
+                                            Dettagli
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-              </div>
-          </div>
-        ))}
-      </div>
+                    {searchTerm && (
+                        <button className="btn btn-outline-secondary btn-sm mt-4 mb-4" onClick={onBackToHome}>
+                            <i className="bi bi-house-door me-1"></i>
+                            Torna alla Home
+                        </button>
+                    )}
                 </div>
-                
+
             )}
 
             {/* Viaggi Programmati */}

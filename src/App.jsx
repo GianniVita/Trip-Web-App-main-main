@@ -23,11 +23,15 @@ function App() {
     }
   };
 
+  const handleBackToHome = () => {
+    setSearchTerm('');
+  };
+
   return (
     <>
 
       <Header onNavigate={setCurrentPage} onSearch={handleSearch} />
-      {currentPage === 'home' && <TripListOn onViewTrip={handleViewTrip} searchTerm={searchTerm} />}
+      {currentPage === 'home' && <TripListOn onViewTrip={handleViewTrip} searchTerm={searchTerm} onBackToHome={handleBackToHome} />}
       {currentPage === 'newTrip' && <NewTrip />}
       {currentPage === 'navPart' && <NavPart />}
       {currentPage === 'singleTrip' && selectedTrip && <SingleTripCard trip={selectedTrip} />}
