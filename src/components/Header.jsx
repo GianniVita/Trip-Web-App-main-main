@@ -6,6 +6,7 @@ function Header({ onNavigate, onSearch }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         onSearch(searchInput);
+        setSearchInput('')
     };
 
     return (
