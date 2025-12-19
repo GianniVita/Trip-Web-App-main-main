@@ -40,7 +40,7 @@ function TripListOn({ onViewTrip, searchTerm = '', onBackToHome }) {
                     <div className="row row-cols-1 row-cols-md-4 g-4">
                         {filteredCurrentTrips.map(trip => (
                             <div key={trip.id} className="col">
-                                <div className="card">
+                                <div className="card shadow">
                                     <img src={trip.image} className="card-img-top card-img-custom" alt={trip.destination} />
                                     <div className="card-body">
                                         <h5 className="card-title">{trip.destination}</h5>
@@ -73,7 +73,7 @@ function TripListOn({ onViewTrip, searchTerm = '', onBackToHome }) {
                     {searchTerm ? `Nessun viaggio programmato trovato per "${searchTerm}"` : 'Nessun viaggio programmato'}
                 </p>
             ) : (
-                <ul className="list-group">
+                <ul className="list-group shadow">
                     {filteredTrips.map(trip => (
                         <li key={trip.id} className="list-group-item d-flex justify-content-between align-items-center">
                             <div>

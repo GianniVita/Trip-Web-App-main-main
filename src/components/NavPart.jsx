@@ -23,9 +23,9 @@ function NavPart() {
 
     return (
         <>
-        <div className='page-container'>
+            <div className='page-container container'>
 
-            <div className="card text-center">
+            <div className="card  mt-5 border-2 shadow">
                 <div className="card-header">
                     <ul className="nav nav-tabs card-header-tabs">
                         <li className="nav-item">
@@ -46,14 +46,14 @@ function NavPart() {
                                 placeholder="Cerca partecipante..."
                                 aria-label="Search"
                                 />
-                            <button className="btn btn-outline-dark" onClick={handleSearch}>Cerca</button>
+                            <button className="btn btn-outline-primary" onClick={handleSearch}>Cerca</button>
                         </div>
                     </div>
 
                     {/* dettagli del partecipante */}
                     {searchedParticipant ? (
-                        <div className="container m-3">
-                            <div className="alert alert-success">
+                        <div className="container text-center">
+                            <div className="alert alert-primary">
                                 <h5>Dettagli partecipante trovato:</h5>
                                 <p><strong>Nome:</strong> {searchedParticipant.name}</p>
                                 <p><strong>Email:</strong> {searchedParticipant.email}</p>

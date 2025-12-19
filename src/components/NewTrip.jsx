@@ -41,7 +41,7 @@ function NewTrip() {
                     Aggiungi Nuovo Viaggio
                 </h3>
 
-                <form onSubmit={handleSubmit} className="card p-4 shadow-sm">
+                <form onSubmit={handleSubmit} className="card p-4 shadow">
                     <div className="row mb-3">
                         <div className="col-md-6">
                             <label htmlFor="destination" className="form-label">Destinazione</label>
