@@ -15,6 +15,7 @@ function TripListOn({ onViewTrip, searchTerm = '', onBackToHome }) {
     const filteredTrips = filterTrips(trips);
 
     return (
+        <div className='page-container'>
         <div className="container mt-4">
             {searchTerm && (
                 <div className="alert alert-info mb-4 d-flex justify-content-between align-items-center">
@@ -91,6 +92,7 @@ function TripListOn({ onViewTrip, searchTerm = '', onBackToHome }) {
                 </ul>
             )}
         </div>
+    </div>
     );
 }
 

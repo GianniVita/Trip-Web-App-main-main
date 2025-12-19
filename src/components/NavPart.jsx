@@ -23,6 +23,8 @@ function NavPart() {
 
     return (
         <>
+        <div className='page-container'>
+
             <div className="card text-center">
                 <div className="card-header">
                     <ul className="nav nav-tabs card-header-tabs">
@@ -43,7 +45,7 @@ function NavPart() {
                                 type="search"
                                 placeholder="Cerca partecipante..."
                                 aria-label="Search"
-                            />
+                                />
                             <button className="btn btn-outline-dark" onClick={handleSearch}>Cerca</button>
                         </div>
                     </div>
@@ -68,6 +70,7 @@ function NavPart() {
                     )}
                 </div>
             </div>
+        </div>
         </>
     );
 }

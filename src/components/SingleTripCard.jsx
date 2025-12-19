@@ -10,6 +10,7 @@ function SingleTripCard({ trip }) {
     );
 
     return (
+        <div className='page-container'>
         <div className="container mt-4">
             <div className="card shadow">
                 <div className="card-header text-white" style={{ backgroundColor: '#1E90FF' }}>
@@ -73,6 +74,7 @@ function SingleTripCard({ trip }) {
                 </div>
             </div>
         </div>
+    </div>
     );
 }
 
